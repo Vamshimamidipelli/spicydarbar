@@ -1,19 +1,16 @@
 import React from 'react';
-import { MenuCategory } from '../../../types';
+import { DietaryFilter } from '../../../types';
 
 interface MenuTabsProps {
-  activeTab: MenuCategory;
-  onTabChange: (tab: MenuCategory) => void;
+  activeTab: DietaryFilter;
+  onTabChange: (tab: DietaryFilter) => void;
 }
 
 export const MenuTabs: React.FC<MenuTabsProps> = ({ activeTab, onTabChange }) => {
-  const categories: { id: MenuCategory; label: string }[] = [
-    { id: 'all', label: 'ALL DISHES' },
-    { id: 'small-plates', label: 'SMALL PLATES' },
-    { id: 'main-course', label: 'MAIN COURSE' },
-    { id: 'tandoor', label: 'TANDOOR' },
-    { id: 'sides', label: 'SIDES' },
-    { id: 'desserts', label: 'DESSERTS' }
+  const categories: { id: DietaryFilter; label: string }[] = [
+    { id: 'All', label: 'ALL DISHES' },
+    { id: 'Veg', label: 'VEGETARIAN' },
+    { id: 'Non-Veg', label: 'NON-VEGETARIAN' },
   ];
 
   return (

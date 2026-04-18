@@ -5,7 +5,7 @@ import { Button } from '../../ui/Button';
 
 export const DeliveryPartners: React.FC = () => {
   return (
-    <section id="delivery" className="py-24 px-4 md:px-8 bg-bg-band">
+    <section id="delivery" className="relative py-24 px-4 md:px-8 bg-bg-band bg-review-pattern">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           eyebrow="ROYAL DELIVERY"

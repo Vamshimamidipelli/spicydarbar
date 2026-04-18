@@ -6,9 +6,10 @@ import { NavLink } from 'react-router-dom';
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
+  onOrderClick: () => void;
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, onOrderClick }) => {
   const links = [
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
@@ -22,7 +23,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       initial={{ x: '100%' }}
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-      className="fixed inset-0 z-50 bg-bg-base flex flex-col p-8"
+      className="fixed inset-0 z-50 bg-bg-base/95 backdrop-blur-md flex flex-col p-8"
     >
       <button
         onClick={onClose}
@@ -31,14 +32,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <X size={32} />
       </button>
 
-      <div className="flex flex-col gap-8 mt-16">
+      <div className="flex flex-col gap-6 mt-12">
         {links.map((link) => (
           <NavLink
             key={link.path}
             to={link.path}
             onClick={onClose}
             className={({ isActive }) =>
-              `font-serif text-4xl ${
+              `font-serif text-2xl ${
                 isActive ? 'text-gold' : 'text-cream'
               } hover:text-gold transition-colors`
             }
@@ -49,11 +50,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       </div>
 
       <div className="mt-auto">
-        <NavLink to="/contact" onClick={onClose}>
-          <button className="w-full bg-gold text-btn-dark font-sans font-semibold text-lg py-4 rounded-md">
-            Order Online
-          </button>
-        </NavLink>
+        <button 
+          onClick={() => {
+            onClose();
+            onOrderClick();
+          }}
+          className="w-full bg-gold text-btn-dark font-sans font-semibold text-base py-3 rounded-md transition-colors hover:bg-gold/90"
+        >
+          Order Online
+        </button>
       </div>
     </motion.div>
   );

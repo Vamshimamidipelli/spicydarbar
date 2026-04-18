@@ -3,12 +3,27 @@ export interface Dish {
   name: string;
   price: string;
   description: string;
-  category: 'all' | 'small-plates' | 'main-course' | 'tandoor' | 'sides' | 'desserts';
+  category: string;
   badge: 'spicy' | 'veg' | 'star' | null;
   badgeLabel: string | null;
   tags: string[];
   image: string;
 }
+
+export interface DishOption {
+  type?: string;
+  price: number;
+}
+
+export interface NewDish {
+  name: string;
+  description?: string;
+  options: DishOption[];
+  diet?: 'veg' | 'non-veg' | 'veg-friendly';
+  isSpicy?: boolean;
+}
+
+export type MenuData = Record<string, NewDish[]>;
 
 export interface GalleryItem {
   id: string;
@@ -44,5 +59,5 @@ export interface InfoCard {
 }
 
 export type NavPage = 'home' | 'menu' | 'gallery' | 'about' | 'contact';
-export type MenuCategory = 'all' | 'small-plates' | 'main-course' | 'tandoor' | 'sides' | 'desserts';
+export type DietaryFilter = 'All' | 'Veg' | 'Non-Veg';
 export type GalleryCategory = 'all' | 'cuisine' | 'ambience' | 'exterior';
