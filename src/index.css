@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --color-bg-base: #0A0500;
+  --color-bg-card: #1C0F05;
+  --color-bg-band: #3D1A00;
+  --color-bg-amber: #4A2000;
+  --color-gold: #F5C518;
+  --color-gold-muted: #C8960C;
+  --color-cream: #F5EDD0;
+  --color-sand: #C4A882;
+  --color-muted: #9A7A55;
+  --color-btn-dark: #1A0800;
+  --color-red-badge: #CC2200;
+  --color-green-badge: #3A7A2A;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  --letter-spacing-eyebrow: 0.14em;
+  --letter-spacing-cta: 0.10em;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background-color: #0A0500; color: #F5EDD0; }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
